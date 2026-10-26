@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .loading-screen {
+    position: absolute; /* Veranderd naar absolute om full-screen effect te bereiken */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Volledige breedte van het scherm */
+    height: 100vh; /* Volledige hoogte van het scherm */
+    background-color: #154371; /* Achtergrondkleur zoals gevraagd */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .letter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px; /* Specifieke breedte van de brief */
+    height: 500px; /* Specifieke hoogte van de brief */
+    animation: shake 2s ease-in-out infinite;
+  }
+  
+  .letter-image {
+    width: 100%; /* De brief vult de breedte van de container */
+    height: auto;
+    z-index: 1;
+  }
+  
+  .coins-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .coin {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    background-image: url('munt.png');
+    background-size: cover;
+    background-position: center;
+    transform: translateX(-50%);
+    z-index: 0;
+    animation: fall 2s ease-in-out forwards;
+  }
+  
+  @keyframes fall {
+    0% {
+      top: -70px;
+    }
+    100% {
+      top: 150px;
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0%) rotate(0deg);
+    }
+    25% {
+      transform: translateX(0%) rotate(-2deg);
+    }
+    50% {
+      transform: translateX(0%) rotate(2deg);
+    }
+    75% {
+      transform: translateX(0%) rotate(-2deg);
+    }
+  }
+  

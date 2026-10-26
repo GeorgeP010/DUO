@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="duo icon" href="icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUO Quiz</title>
+    <link rel="stylesheet" href="duo/style.css">
+</head>
+<body>
+    <div id="start-container" class="container">
+        <h1>DUO <span class="highlight">QUIZ</span></h1>
+        <div class="name-input">
+            <input type="text" id="player-name" placeholder="Voer je naam in" required>
+        </div>
+        <button class="start-btn" onclick="startQuiz()">Start</button>
+    </div>
+
+    <audio id="background-music" src="duo/muziek.mp3" preload="auto"></audio>
+    <audio id="correct-sound" src="duo/correct.mp3" preload="auto"></audio>
+    <audio id="wrong-sound" src="duo/incorrect.mp3" preload="auto"></audio>
+    <audio id="clap-sound" src="duo/einde.mp3" preload="auto"></audio>
+
+    <div id="quiz-container" class="quiz-container" style="display: none;">
+        <div class="header">
+            <div class="question-text">
+                VRAAG <span id="question-number">1</span>/10
+            </div>
+            <div class="score-text">
+                Punten: <span id="score">0</span>
+            </div>
+        </div>
+        <div class="question">
+            <h3 id="question-text"></h3>
+        </div>
+        <div class="options">
+            <button id="optionA" class="option-btn"></button>
+            <button id="optionB" class="option-btn"></button>
+            <button id="optionC" class="option-btn"></button>
+            <button id="optionD" class="option-btn"></button>
+        </div>
+        <div class="timer">
+            ⏳ <span id="time-left">30</span> sec
+        </div>
+    </div>
+    <div id="explanation-container" style="display:none;">
+
+    </div>
+    
+    <div id="end-container" class="end-container" style="display: none;">
+        <h2>Quiz afgelopen!</h2>
+        <p>Speler: <span id="player-name-display"></span></p>
+        <p>Je eindscore is: <span id="final-score">0</span></p>
+        <button class="start-btn" onclick="restartQuiz()">Opnieuw spelen</button>
+        <button class="start-btn2" onclick="goToHomePage()">Ga naar Homepagina</button> 
+    </div>
+    
+    <script src="duo/script.js"></script> 
+</body>
+</html>
